@@ -1,5 +1,6 @@
 import { NuxtConfig } from "@nuxt/types";
 import { resolve } from 'path'
+import i18n from './locales/nuxt-i18n.config'
 
 const config: NuxtConfig = {
   ssr: false,
@@ -31,23 +32,8 @@ const config: NuxtConfig = {
     "@nuxtjs/tailwindcss"
   ],
   modules: [
-    'nuxt-i18n'
+    ['nuxt-i18n', i18n]
   ],
-  i18n: {
-    locales: ['jp', 'en'],
-    defaultLocale: 'jp',
-    vueI18n: {
-      fallbackLocale: 'jp',
-      messages: {
-        jp: {
-          welcome: 'ようこそ'
-        },
-        en: {
-          welcome: 'Welcome'
-        }
-      }
-    }
-  },
   tailwindcss: {
     exposeConfig: true,
     jit: true,

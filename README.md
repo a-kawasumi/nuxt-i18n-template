@@ -8,6 +8,7 @@
 - husky
 - eslint
 - tailwind css
+- [nuxt/i18n](https://i18n.nuxtjs.org/)
 
 ## Commit Lint
 
