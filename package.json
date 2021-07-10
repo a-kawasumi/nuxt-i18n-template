@@ -1,0 +1,47 @@
+{
+  "name": "nuxt-typescript-tailwindcss-template",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "a-kawasumi",
+    "email": "a_kawasumi@yumemi.co.jp"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build --modern",
+    "start": "nuxt start",
+    "generate": "nuxt generate --modern",
+    "analyze": "yarn build -a",
+    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3",
+    "nuxt-property-decorator": "^2.9.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@nuxt/types": "^2.15.3",
+    "@nuxt/typescript-build": "^2.1.0",
+    "@nuxtjs/tailwindcss": "^4.0.1",
+    "@teamnovu/nuxt-breaky": "^1.2.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.13.0",
+    "husky": "^7.0.0",
+    "postcss": "^8.2.8",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^2.1.1"
+  },
+  "lint-staged": {
+    "*.@(ts|vue|js)": [
+      "yarn lint"
+    ]
+  }
+}
