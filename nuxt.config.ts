@@ -30,7 +30,24 @@ const config: NuxtConfig = {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss"
   ],
-  modules: [],
+  modules: [
+    'nuxt-i18n'
+  ],
+  i18n: {
+    locales: ['jp', 'en'],
+    defaultLocale: 'jp',
+    vueI18n: {
+      fallbackLocale: 'jp',
+      messages: {
+        jp: {
+          welcome: 'ようこそ'
+        },
+        en: {
+          welcome: 'Welcome'
+        }
+      }
+    }
+  },
   tailwindcss: {
     exposeConfig: true,
     jit: true,
@@ -39,17 +56,17 @@ const config: NuxtConfig = {
   },
   build: {
     extend(conf, ctx) {
-       if (ctx.isDev && ctx.isClient && conf?.module) {
-          // 保存時のeslint
-          conf.module.rules.push({
-           enforce: "pre",
-           test: /\.(js|vue)$/,
-           loader: "eslint-loader",
-           exclude: /(node_modules)/
-          })
-       }
-     }
-   }
+      if (ctx.isDev && ctx.isClient && conf?.module) {
+        // 保存時のeslint
+        conf.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  }
 };
 
 export default config;

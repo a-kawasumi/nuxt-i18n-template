@@ -1,17 +1,18 @@
 <template>
-  <div class="flex pl-12">
-    <div>nuxt-ts-tailwind-template</div>
-    <div v-for="(sample, index) in samples" :key="index">{{ sample.num }}</div>
+  <div class="flex flex-col">
+    <div>{{ message }}</div>
+    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+    <nuxt-link :to="switchLocalePath('jp')">日本語</nuxt-link>
+    <nuxt-link :to="localePath('sample')"> to sample page </nuxt-link>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import samples from "~/assets/api/sample";
 
 @Component
 export default class PagesIndex extends Vue {
-  samples = samples;
+  message = this.$t("welcome");
 }
 </script>
 
