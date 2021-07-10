@@ -1,4 +1,4 @@
-# nuxt-ts-tailwind-template
+# nuxt-i18n-template
 
 ## packages
 
