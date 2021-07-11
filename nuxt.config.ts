@@ -1,27 +1,27 @@
 import { NuxtConfig } from "@nuxt/types";
-import { resolve } from 'path'
-import i18n from './locales/nuxt-i18n.config'
+import { resolve } from "path";
+import i18n from "./locales/nuxt-i18n.config";
 
 const config: NuxtConfig = {
   ssr: false,
-  srcDir: 'src/',
+  srcDir: "src/",
   alias: {
-    '~': resolve(__dirname, './src'),
+    "~": resolve(__dirname, "./src"),
   },
   server: {
-    port: 8000
+    port: 8000,
   },
   head: {
     title: "nuxt-typescript-tailwindcss-template",
     htmlAttrs: {
-      lang: "en"
+      lang: "en",
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   plugins: [],
   components: true,
@@ -29,16 +29,14 @@ const config: NuxtConfig = {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
   ],
-  modules: [
-    ['nuxt-i18n', i18n]
-  ],
+  modules: [["nuxt-i18n", i18n]],
   tailwindcss: {
     exposeConfig: true,
     jit: true,
     // tailwindチートシート
-    viewer: false
+    viewer: false,
   },
   build: {
     extend(conf, ctx) {
@@ -46,13 +44,13 @@ const config: NuxtConfig = {
         // 保存時のeslint
         conf.module.rules.push({
           enforce: "pre",
-          test: /\.(js|vue)$/,
+          test: /\.(js|ts|vue)$/,
           loader: "eslint-loader",
-          exclude: /(node_modules)/
-        })
+          exclude: /(node_modules)/,
+        });
       }
-    }
-  }
+    },
+  },
 };
 
 export default config;

@@ -14,11 +14,12 @@
     "generate": "nuxt generate --modern",
     "analyze": "yarn build -a",
     "test": "",
-    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --fix",
     "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.9.1",
+    "lint-staged": "^11.0.0",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.27.3",
     "nuxt-property-decorator": "^2.9.1"
